@@ -54,53 +54,45 @@
     }
 
 
-    .float {
-      z-index: 1;
+    /* Botones flotantes de acción rápida en columna */
+    .float, .float-2, .float-3 {
+      z-index: 1000;
       position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 40px;
-      right: 40px;
+      width: 50px;
+      height: 50px;
+      right: 20px;
       background-color: #E9B949;
-      color: #000;
-      border-radius: 50px;
-      text-align: center;
-      box-shadow: 2px 2px 3px #999;
-      font-size: 35px;
-    }
-    .float-2 {
-      z-index: 1;
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 40px;
-      right: 120px;
-      background-color: #E9B949;
-      color: #000;
-      border-radius: 50px;
-      text-align: center;
-      font-size: 35px;
-      box-shadow: 2px 2px 3px #999;
-    }
-    .float-3 {
-      z-index: 1;
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 40px;
-      right: 200px;
-      background-color: #E9B949;
-      color: #000;
-      border-radius: 50px;
-      text-align: center;
-      
-      font-size: 30px;
-      box-shadow: 2px 2px 3px #999;
+      color: #000 !important;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      font-size: 24px;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      text-decoration: none;
     }
     
+    .float {
+      bottom: 20px;
+    }
+    .float-2 {
+      bottom: 80px;
+    }
+    .float-3 {
+      bottom: 140px;
+    }
 
-    .my-float {
-      margin-top: 22px;
+    .float:hover, .float-2:hover, .float-3:hover {
+      transform: scale(1.15);
+      box-shadow: 0 6px 20px rgba(233, 185, 73, 0.6);
+      background-color: #f1c763;
+    }
+
+    @media (max-width: 991.98px) {
+      .navbar-brand img {
+        height: 160px !important;
+      }
     }
   </style>
 
@@ -109,7 +101,7 @@
 <body data-bs-spy="scroll" data-bs-target="#navScroll">
   <a class="float" href="https://api.whatsapp.com/send?phone=5216181597019"
   target="_blank">
-    <i class="bi bi-whatsapp my-float"></i>
+    <i class="bi bi-whatsapp"></i>
   </a>
   <a target="_blank" href="https://www.facebook.com/Andamios-Viramontes-1938088763097467/?ref=page_internal" class="float-2">
     <i class="bi bi-facebook"></i>
@@ -124,8 +116,7 @@
   <nav id="navScroll" class="navbar navbar-expand-lg navbar-light fixed-top" tabindex="0">
     <div class="container">
       <a class="navbar-brand pe-4 fs-4 d-flex align-items-center" href="/">
-        <img src="img/logo-nobg.png" style="height:160px; width:auto;" alt="Andamios Viramontes">
-        <span class="ms-1 fw-bolder">Andamios y Madera Viramontes</span>
+        <img src="img/logo-nobg.png" style="height:130px; width:auto;" alt="Andamios Viramontes">
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
